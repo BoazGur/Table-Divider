@@ -50,12 +50,12 @@ tk.Button(master,
 tk.mainloop()
 
 # Pandas configurations
-df = pd.read_csv(filename)
+df = pd.read_csv(filename, encoding='ISO-8859-1')
 
 if rows == -1:
     rows = len(df)
 
 for row in range(rows):
     new_df = df.iloc[row, :]
-    new_df.to_csv(saved_filename + '\\' + new_df['City'] + '(' + row + '+)' + '.csv')
+    new_df.to_csv(saved_filename + '/' + new_df['City'] + '(' + row + '+)' + '.csv')
 
